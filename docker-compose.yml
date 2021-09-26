@@ -3,8 +3,8 @@ services:
 
  db:
   image: mariadb:10
-  container_name: phpservermon-mariadb
-  hostname: mariadb
+  container_name: phpservermon-mariadb2
+  hostname: mariadb2
   restart: always
   volumes:
    - ./mariadb:/var/lib/mysql
@@ -29,7 +29,7 @@ services:
  phpservermon:
   image: itsared/phpservermon_standard:3.3.2
   container_name: phpservermon
-  hostname: phpservermon
+  hostname: phpservermon2
   restart: always
   environment:
 #  - PSM_BASE_URL=172.16.1.248
@@ -47,7 +47,7 @@ services:
   phpservermonphonebsum:
   image: itsared/phpservermon_standard:3.3.2
   container_name: phpservermonphonesum
-  hostname: phpservermonphonebsum
+  hostname: phpservermonphonebsum2
   restart: always
   environment:
 #  - PSM_BASE_URL=172.16.1.248
