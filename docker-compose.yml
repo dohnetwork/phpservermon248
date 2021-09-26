@@ -27,7 +27,7 @@ services:
 #  ports:
 
  phpservermon:
-  image: benoitpodwinski/phpservermon
+  image: itsared/phpservermon_standard:3.3.2
   container_name: phpservermon
   hostname: phpservermon
   restart: always
@@ -44,10 +44,8 @@ services:
    - db
   ports:
    - 80:80
-   
-
- phpservermonphonebsum:
-  image: benoitpodwinski/phpservermon
+  phpservermonphonebsum:
+  image: itsared/phpservermon_standard:3.3.2
   container_name: phpservermonphonesum
   hostname: phpservermonphonebsum
   restart: always
