@@ -45,7 +45,7 @@ services:
   ports:
    - 87:80
   phpservermonphonebsum:
-  image: itsared/phpservermon_standard:3.3.2
+ image: itsared/phpservermon_standard:3.3.2
   container_name: phpservermonphonesum
   hostname: phpservermonphonebsum2
   restart: always
