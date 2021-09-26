@@ -1,10 +1,11 @@
+
 version: "2"
 services:
 
  db:
   image: mariadb:10
-  container_name: phpservermon-mariadb2
-  hostname: mariadb2
+  container_name: phpservermon-mariadb
+  hostname: mariadb
   restart: always
   volumes:
    - ./mariadb:/var/lib/mysql
@@ -29,7 +30,7 @@ services:
  phpservermon:
   image: itsared/phpservermon_standard:3.3.2
   container_name: phpservermon
-  hostname: phpservermon2
+  hostname: phpservermon
   restart: always
   environment:
 #  - PSM_BASE_URL=172.16.1.248
@@ -43,22 +44,4 @@ services:
   depends_on:
    - db
   ports:
-   - 87:80
-  phpservermonphonebsum:
- image: itsared/phpservermon_standard:3.3.2
-  container_name: phpservermonphonesum
-  hostname: phpservermonphonebsum2
-  restart: always
-  environment:
-#  - PSM_BASE_URL=172.16.1.248
-   - PSM_DB_HOST=db
-   - PSM_DB_NAME=voice
-   - PSM_DB_USER=root
-   - PSM_DB_PASS=password
-   - PSM_DB_PREFIX=psm_
-   - PHP_TIMEZONE=Asia/Bangkok
-   - UPDATE_INTERVAL=60
-  depends_on:
-   - db
-  ports:
-   - 88:80
+   - 81:80
