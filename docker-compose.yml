@@ -10,7 +10,7 @@ services:
   volumes:
    - ./mariadb:/var/lib/mysql
   environment:
-   - MYSQL_ROOT_PASSWORD=camel
+   - MYSQL_ROOT_PASSWORD=password
    - MYSQL_DATABASE=phpservermon
    - MYSQL_USER=phpservermon
    - MYSQL_PASSWORD=password
