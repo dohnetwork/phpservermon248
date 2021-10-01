@@ -1,7 +1,7 @@
 version: "2"
 services:
 
- phpservermon:
+ phpservermonVoice:
   image: itsared/phpservermon_standard:3.3.2
   container_name: phpservermon248Voice
   hostname: phpservermon
@@ -19,3 +19,22 @@ services:
 #   - 172.16.1.212
   ports:
    - 81:80
+
+ phpservermonAgency:
+  image: itsared/phpservermon_standard:3.3.2
+  container_name: phpservermon248Agency
+  hostname: phpservermon
+  restart: always
+  environment:
+#  - PSM_BASE_URL=172.16.1.248
+   - PSM_DB_HOST=172.16.1.212
+   - PSM_DB_NAME=agency
+   - PSM_DB_USER=root
+   - PSM_DB_PASS=camel
+   - PSM_DB_PREFIX=psm_
+   - PHP_TIMEZONE=Asia/Bangkok
+   - UPDATE_INTERVAL=60
+#  depends_on:
+#   - 172.16.1.212
+  ports:
+   - 82:80
